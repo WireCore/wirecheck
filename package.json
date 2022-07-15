@@ -1,0 +1,81 @@
+{
+  "name": "wirecheck",
+  "version": "1.0.1",
+  "description": "A JavaScript/Typescript library for fast type checking. Check if a given value is a string, number, object, ...",
+  "author": "WireCore <info@wirecore.net> (https://wirecore.net)",
+  "homepage": "https://github.com/WireCore/wirecheck",
+  "contributors": [
+    "Dennis Grosch (https://github.com/groschi24)"
+  ],
+  "repository": "WireCore/wirecheck",
+  "bugs": {
+    "url": "https://github.com/WireCore/wirecheck/issues"
+  },
+  "license": "MIT",
+  "main": "lib/wirecheck.js",
+  "types": "lib/wirecheck.d.ts",
+  "files": [
+    "lib/wirecheck.d.ts",
+    "lib/wirecheck.js",
+    "lib/wirecheck.js.map"
+  ],
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,ts",
+      "quiet": true,
+      "legacyWatch": true
+    }
+  },
+  "scripts": {
+    "compile": "tsc",
+    "clear": "rimraf build/compiled/*",
+    "make-bundle": "rollup --config",
+    "build": "run-s clear compile make-bundle",
+    "watch": "npm-watch",
+    "test": "mocha -r ts-node/register 'tests/**/*.ts'",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.0.3",
+    "husky": "^8.0.1",
+    "mocha": "^10.0.0",
+    "npm-run-all": "^4.1.5",
+    "npm-watch": "^0.11.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.76.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
+  },
+  "keywords": [
+    "type",
+    "typeof",
+    "Number",
+    "num",
+    "Date",
+    "numeric",
+    "math",
+    "string",
+    "check",
+    "finite",
+    "integer",
+    "float",
+    "isnan",
+    "isNumber",
+    "is-number",
+    "isfinite",
+    "parseFloat",
+    "parseInt",
+    "test",
+    "regex",
+    "parse",
+    "is"
+  ]
+}
