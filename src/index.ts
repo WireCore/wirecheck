@@ -33,6 +33,88 @@ export function isNumber(value: number | string | unknown): boolean {
 }
 
 /**
+ * Check if given value is a integer number
+ *
+ * @param {number | string | unknown} value - number
+ *
+ * @return {boolean} is integer number
+ */
+export function isInteger(value: number | string | unknown): boolean {
+  if (typeof value === 'number' && isNumber(value)) {
+    return (
+      (Number.isFinite ? Number.isFinite(value) : isFinite(value)) &&
+      Math.floor(value) === value
+    );
+  }
+
+  if (typeof value === 'string' && value.trim() !== '' && isNumber(value)) {
+    return (
+      (Number.isFinite ? Number.isFinite(+value) : isFinite(+value)) &&
+      Math.floor(+value) === +value
+    );
+  }
+
+  return false;
+}
+
+/**
+ * Check if given value is a float number
+ *
+ * @param {number | string | unknown} value - number
+ *
+ * @return {boolean} is float number
+ */
+export function isFloat(value: number | string | unknown): boolean {
+  if (typeof value === 'number') {
+    return !!(value % 1);
+  }
+
+  if (typeof value === 'string' && value.trim() !== '') {
+    return !!(+value % 1);
+  }
+
+  return false;
+}
+
+/**
+ * Check if given value is a even number
+ *
+ * @param {number | string | unknown} value - number
+ *
+ * @return {boolean} is even number
+ */
+export function isEven(value: number | string | unknown): boolean {
+  if (typeof value === 'number' && isNumber(value)) {
+    return value % 2 === 0;
+  }
+
+  if (typeof value === 'string' && value.trim() !== '' && isNumber(value)) {
+    return +value % 2 === 0;
+  }
+
+  return false;
+}
+
+/**
+ * Check if given value is a odd number
+ *
+ * @param {number | string | unknown} value - number
+ *
+ * @return {boolean} is odd number
+ */
+export function isOdd(value: number | string | unknown): boolean {
+  if (typeof value === 'number' && isNumber(value)) {
+    return value % 2 !== 0;
+  }
+
+  if (typeof value === 'string' && value.trim() !== '' && isNumber(value)) {
+    return +value % 2 !== 0;
+  }
+
+  return false;
+}
+
+/**
  * Check if string is a valid JSON
  *
  * @param {string} str
