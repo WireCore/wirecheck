@@ -1,6 +1,6 @@
 {
   "name": "wirecheck",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A JavaScript/Typescript library for fast type checking. Check if a given value is a string, number, object, ...",
   "author": "WireCore <info@wirecore.net> (https://wirecore.net)",
   "homepage": "https://github.com/WireCore/wirecheck",
